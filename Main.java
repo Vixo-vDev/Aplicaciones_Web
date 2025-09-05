@@ -23,7 +23,8 @@ public class Main {
                     System.out.println("Ingresa el valor a de depositar: ");
                     break;
                 case 2:
-                    System.out.println("Saldo acutal: "+ banco.getCantidad());
+                    double saldo1 = consultar.getSaldo();
+                    consultar.consultarSaldo(saldo1);
                     break;
 
                 case 3:
