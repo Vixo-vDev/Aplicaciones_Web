@@ -1,10 +1,14 @@
 public class Retirar {
-    private double saldo;
 
 
-    public double retirar(double saldo){
+    public double retirar(double saldo, double retirar){
         double total = 0;
-        System.out.println("Cuánto deseas retirar?:");
+        if(saldo<retirar){
+            System.out.println("No cuentas con saldo suficiente");
+        }else{
+            System.out.println("Operacion exitosa");
+            total = saldo - retirar;
+        }
         return  total;
     }
 }

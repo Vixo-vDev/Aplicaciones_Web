@@ -6,6 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner read = new Scanner(System.in);
         Consultar consultar = new Consultar();
+        Retirar retirar = new Retirar();
         int opc;
         double dinero;
         do{
@@ -28,14 +29,14 @@ public class Main {
                     break;
 
                 case 3:
+                    double saldoactual = consultar.getSaldo();
                     System.out.println("Ingresa el valor a retirar: ");
-                    double retirar = read.nextDouble();
-                    dinero = banco.getCantidad() - retirar;
-                    banco.setCantidad(dinero);
+                    double retirarSaldo = read.nextDouble();
+                    consultar.setSaldo(retirar.retirar(saldoactual, retirarSaldo));
+
                     break;
             }
         }while(opc != 4);
         System.out.println("Has salido correctamente del sistema");
     }
     }
-}
