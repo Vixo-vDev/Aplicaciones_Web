@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner read = new Scanner(System.in);
+        Consultar consultar = new Consultar();
         int opc;
         double dinero;
         do{
