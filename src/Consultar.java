@@ -11,6 +11,6 @@ public class Consultar {
     }
 
     public void consultarSaldo(double saldo){
-        System.out.println("El saldo actual es:" +saldo);
+        System.out.println("El saldo actual es: $" +saldo);
     }
 }
