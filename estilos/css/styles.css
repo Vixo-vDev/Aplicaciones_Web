@@ -1,9 +1,11 @@
 .texto{
-    color: blue;
+    color: white;
 }
-.texto1{
-    color: peru;
-}
-.texto2{
-    color: red;
+
+.menu {
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    background-color: #008080;
+    position: fixed;
 }
