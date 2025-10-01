@@ -1,0 +1,52 @@
+h1{
+    background-color: red;
+}
+
+.box{
+    margin: 30px;
+    padding: 5px;
+    border: 3px solid red;
+    background-color: aliceblue;
+}
+
+.box-2{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    position: static;
+}
+
+.box-3{
+    width: 100px;
+    height: 100px;
+    background-color: peru;
+    position: relative;
+    top: 20px;
+    left: 30px;
+    bottom: 30px;
+}
+
+.container{
+    width: 300px;
+    height: 200px;
+    background-color: green;
+    position: relative;
+}
+
+.box-4{
+    width: 100px;
+    height: 100px;
+    background-color: brown;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.box-5{
+    width: auto;
+    height: 100px;
+    background-color: brown;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
