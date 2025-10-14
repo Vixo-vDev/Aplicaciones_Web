@@ -1,0 +1,26 @@
+body{
+    margin: 0px;
+    padding: 20px;
+    background-color: tomato;
+}
+
+
+.contenedor{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual tamaño */
+    gap:20px; /* espacio entre filas y columnas */
+}
+
+.caja{
+    background-color: greenyellow;
+    padding: 40px;
+    border-radius: 10px;
+}   
+
+
+
+@media(max-width: 1024px) and (min-width: 601px){
+    .contenedor{
+        grid-template-columns: 1fr; /* 1 columna */
+    }
+}
