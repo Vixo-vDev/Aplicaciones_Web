@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método POST - Spring Boot</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+<h1>Ejemplo de método POST con Spring Boot</h1>
+
+<form id="saludoForm">
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" id="nombre" name="nombre">
+
+    <br>
+    <label for="apellido">Apellido:</label><br>
+    <input type="text" id="apellido" name="apellido" >
+
+    <br>
+    <label for="apellidoMaterno">Apellido materno:</label><br>
+    <input type="text" id="apellidoMaterno" name="apellidoMaterno" >
+
+    <br>
+    <label for="Correo">Correo:</label>
+    <input type="text" id="Correo" name="Correo" >
+
+    <button type="submit">Enviar</button>
+</form>
+
+<h3>Respuesta del servidor:</h3>
+<p id="respuesta"></p>
+
+<script>
+    const form = document.getElementById("saludoForm");
+
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        // Obtener valores
+        const nombre = document.getElementById("nombre").value.trim();
+        const apellido = document.getElementById("apellido").value.trim();
+        const apellidoMaterno = document.getElementById("apellidoMaterno").value.trim();
+        const correo = document.getElementById("Correo").value.trim();
+
+        // Validación
+        if (!nombre || !apellido || !apellidoMaterno || !correo) {
+            document.getElementById("respuesta").textContent =
+                "Todos los campos son obligatorios.";
+            return;
+        }
+
+        const datos = {
+            nombre: nombre,
+            apellido: apellido,
+            apellidoMaterno: apellidoMaterno,
+            correo: correo
+        };
+
+        try {
+            const respuesta = await fetch("/saludo", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(datos)
+            });
+
+            const json = await respuesta.json();
+            document.getElementById("respuesta").textContent = json.mensaje;
+
+        } catch (error) {
+            document.getElementById("respuesta").textContent =
+                "Error al conectar con el servidor.";
+        }
+    });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
